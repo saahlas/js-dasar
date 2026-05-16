@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width", initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            //function
+            //membuat function
+            
+            function sayHelloWorld(){
+                document.writeln("<p>Hello World</p>");
+            }
+            //memanggil function
+            sayHelloWorld();
+
+            //Function Parameter dan optional param
+            //di JS semua param adalah optional (otomatis undefined apabila tidak diisi)
+            function saySomething(something, h1 = false){
+                //default param h1 adalah false
+                if (h1){
+                    document.writeln(`<h1>${something}</h>`);
+                }else{
+                    document.writeln(`<p>${something}</p>`);
+                }
+            }
+            saySomething("Hello world parameter");
+            saySomething("Hello world parameter", true);
+
+            //function return value
+            //di js hanya bisa pakai 1 data
+            function addTwoNumber(value1, value2){
+                return value1 + value2; //mengembalikan value1+value2
+            }
+            let result = addTwoNumber(100,60);
+            saySomething(result);
+
+            //menghentikan eksekusi dengan return
+            function maksimal(a,b){
+                if (b>a)return b;
+                return a;
+                alert("tidak akan pernah dijalankan");
+                //code dibawah return tidak akan dijalankan
+            }
+            saySomething(maksimal(3,6));
+        </script>
+    </body>
+</html>

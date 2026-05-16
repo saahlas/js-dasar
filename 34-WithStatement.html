@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width", initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            //With statement => fitur untuk menurunkan scope data
+            //dengan with statement, kita bisa mengakses property dalam sebuah data tanpa harus menyebut datanya
+
+            const person ={
+                firstname : "Budi",
+                middlename : "Joko",
+                lastname : "Nugroho",
+            };
+
+            with(person){
+                document.write(`<p>${firstname}</p>`);
+                document.write(`<p>${middlename}</p>`);
+                document.write(`<p>${lastname}</p>`);
+            }
+            //with statement tidak direkomendasikan
+            //karena membuat kode ambigu
+        </script>
+    </body>
+</html>

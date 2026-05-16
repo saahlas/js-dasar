@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width", initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            //konfersi string and number
+            /*
+            --------------------------------------------------
+            function        |   keterangan
+            --------------------------------------------------
+            parseInt(str)   |   string ke number(bulat)
+            parseFloat(str) |   string ke number(float)
+            Number(str)     |   string ke number(bulat/pecahan)
+            num.toString()  |   number ke string
+            ---------------------------------------------------
+            */
+
+            document.writeln(parseInt("100.8")+"<br>");
+            document.writeln(typeof parseInt("100.5") + "<br>");
+            document.writeln(Number("100.5") + "<br>");
+
+            //NaN => Not a Number
+            document.writeln(Number("Hello")+"<br>");
+            document.writeln(parseInt("1Hello") + "<br>"); //parseInt/float kesalahan akan ditolelir(jika kesalah ada di belakang)
+            document.writeln(parseFloat("1.4Hello") + "<br>");
+
+            //isNan() function
+            document.writeln(isNaN(Number("Hello")) + "<br>");
+        </script>
+    </body>
+</html>

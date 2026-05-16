@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width", initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            //Destructuring => membongkar value di array atau object ke variable-variable
+            //Array
+            (()=>{
+                function hitungArray(a,b){
+                    return [a*b, a/b,a+b,a-b];
+                }
+                const [kali,bagi,...other] = hitungArray(3,7); //other => spead operator(:Array)
+                console.info(kali);
+                console.info(bagi);
+                console.info(others);
+
+                console.log('batas');
+
+                //Destructing function parameter
+                function sum([a,b]) {
+                    console.info(a+b);
+                }
+                let bilangan = [12,6];
+                sum(bilangan);
+            })();
+
+            console.log(`batas`);
+
+            //object
+            (() =>{
+                function hitungObject(a,b){
+                    let kali = a * b;
+                    let bagi = a / b;
+                    let tambah = a + b;
+                    let kurang = a - b;
+                    return {tambah, kurang, kali, bagi};
+                    //atau
+                    //return {kali:kali, bagi:bagi, tambah:tambah, kurang:kurang};
+                }
+                //kalau object tidak harus urut
+                const {kali:KALI, bagi,...others}= hitungObject(44, 77); //kali:KALI =>mengganti variable
+                console.info(KALI);
+                console.info(bagi);
+                console.info(others);
+
+                console.log(`batas`);
+
+                //Destructing Nested Object
+                (() => {
+                    const person = {
+                        fn:"Dila",
+                        ln:"Puspa",
+                        age:18,
+                        gender:"Female",
+                        address: {
+                            city: "Boyolali",
+                            country: "Indonesia",
+                            street: "Jl. Solo-Jogja",
+                        },
+                    };
+
+                    const {
+                        fn,
+                        ln,
+                        address: {country, city, street},
+                        ...others
+                    } = person;
+
+                    console.info(fn);
+                    console.info(ln);
+                    console.info(country);
+                    console.info(city);
+                    console.info(street);
+                    console.info(address);
+
+                    console.log(`batas`);
+
+                    //Destructing function parameter
+                    function printProfile({fn,ln,address:{country, city, street}, age, gender}) {
+                        console.info(fn);
+                        console.info(ln);
+                        console.info(country);
+                        console.info(street);
+                        console.info(age);
+                        console.info(gender);
+                    }
+                    printProfile(person);
+                })();
+            })();
+
+            console.log(`batas`);
+
+            //default value
+        (() => {
+            {
+                //Array
+                const name = ["Budi", "Eka"];
+                let [fn, ln, full = "Budi Eka"] = name;
+                console.info(fn);
+                console.info(ln);
+                console.info(full);
+            }
+
+            console.log(`batas`);
+
+            {
+                //Object
+                const name ={
+                    first: "Sahla",
+                    last: "Senghyeon",
+                };
+                let{first, last, FULL = "Budi Eka"} = name;
+                console.info(first);
+                console.info(last);
+                console.info(full);
+            }
+        })();
+        </script>
+    </body>
+</html>
